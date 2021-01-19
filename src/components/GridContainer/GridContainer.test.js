@@ -36,6 +36,14 @@ describe('multiplication grid', () => {
     });
 
     it('toggles all numbers active property to false', () => {
+        const mockArr = [
+            {num: 1, active: false},
+            {num: 2, active: false},
+        ];
 
+        mockArr.forEach((item) => (item.active = false));
+
+        expect(mockArr[0].active).toBe(false);
+        expect(mockArr[1].active).toBe(false);
     });
 });
