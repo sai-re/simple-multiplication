@@ -1,11 +1,11 @@
-import Grid from './components/GridContainer/GridContainer';
+import GridContainer from './components/GridContainer/GridContainer';
 
 import './App.css';
 
 function App() {
 	return (
 		<div className="App">
-			<Grid />
+			<GridContainer />
 		</div>
 	);
 }
