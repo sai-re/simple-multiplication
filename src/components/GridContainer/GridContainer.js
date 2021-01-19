@@ -10,6 +10,9 @@ export default class GridContainer extends React.Component {
             highlighted: false,
             currentNum: ''
         };
+
+        this.handleClick = this.handleClick.bind(this);
+        this.handleReset = this.handleReset.bind(this);
     }
 
     /**
@@ -25,6 +28,29 @@ export default class GridContainer extends React.Component {
         this.setState({ numbers: copy });
     };
 
+    /**
+    * @function handleClick finds multiple of clicked number and toggles active property
+	*/
+    handleClick = (e) => {
+        const copy = [...this.state.numbers];
+        const currentNum = +e.target.textContent;
+
+        copy.forEach((item) => item.num % currentNum === 0 ? (item.active = true) : (item.active = false));
+
+        this.setState({ numbers: copy, currentNum: currentNum });
+    };
+
+    /**
+    * @function handleReset loops over all numbers and toggles active to false
+	*/
+    handleReset = () => {
+        const copy = [...this.state.numbers];
+    
+        copy.forEach((item) => (item.active = false));
+    
+        this.setState({ numbers: copy });
+    };
+
     componentDidMount() {
         this.printNumbers();
     }
@@ -36,11 +62,15 @@ export default class GridContainer extends React.Component {
 
                 <p className="app__description">This app displays 144 boxes on the screen. Click a box to view all the multiples of that number.</p>
 
+                <p className="app__selected-num">You have selected {this.state.currentNum}</p>
+
+                <button className="app__reset" onClick={ this.handleReset }>Reset</button>
+
                 <ul className="app-grid__container">
                     {this.state.numbers.map((item) => (
                         <GridItem 
                             key={item.num}
-                            onClick={this.handleClick}
+                            handleClick={this.handleClick}
                             className={item.active}
                             number={item.num}
                         />
