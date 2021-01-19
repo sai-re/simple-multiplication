@@ -16,7 +16,23 @@ describe('multiplication grid', () => {
     });
 
     it('finds multiples of selected number and toggles active property', () => {
+        const mockArr = [
+            {num: 1, active: false},
+            {num: 2, active: false},
+            {num: 3, active: false},
+            {num: 4, active: false},
+            {num: 5, active: false},
+            {num: 6, active: false},
+            {num: 7, active: false},
+            {num: 8, active: false},
+            {num: 9, active: false},
+            {num: 10, active: false}
+        ];
 
+        mockArr.forEach((item) => item.num % 5 === 0 ? (item.active = true) : (item.active = false));
+
+        expect(mockArr[4].active).toBe(true);
+        expect(mockArr[9].active).toBe(true);
     });
 
     it('toggles all numbers active property to false', () => {
