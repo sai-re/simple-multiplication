@@ -1,5 +1,6 @@
 import React from 'react';
 import GridItem from '../GridItem/GridItem';
+import './GridContainer.scss';
 
 export default class GridContainer extends React.Component {
     constructor() {

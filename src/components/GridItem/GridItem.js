@@ -1,10 +1,11 @@
 import React from 'react';
+import './GridItem.scss';
 
 export default function GridItem(props) {
-    const { active, number, handleClick } = props;
+    const { className, number, handleClick } = props;
     
     return (
-        <li className={`app-grid__item ${ active ? "highlighted" : "" }`} onClick={ handleClick }>
+        <li className={`app-grid__item ${ className ? "highlighted" : "" }`} onClick={ handleClick }>
             {number}
         </li>
     )
