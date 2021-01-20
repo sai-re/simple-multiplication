@@ -1,0 +1,47 @@
+.app-container {
+    padding: 30px 10px;
+}
+
+.app__title,
+.app__description,
+.app__reset {
+    margin-top: 10px;
+}
+
+.app__selected-num {
+    margin-top: 20px;
+}
+
+.app__reset {
+    padding: 10px 15px;
+    background-color: white;
+    border: 2px solid #263238;
+    cursor: pointer;
+}
+
+.app__reset:hover {
+    background-color: #263238;
+    color: white;
+}
+
+.app-grid__container {
+    display: grid;
+    gap: 15px 15px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
+
+    @media (min-width: 600px) {    
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    @media (min-width: 900px) {
+        grid-template-columns: repeat(3, 1fr);
+        margin: 20px 60px;
+    }
+
+    @media (min-width: 1200px) {
+        grid-template-columns: repeat(auto-fill, 100px);
+        justify-content: center;
+    }
+}

@@ -1,3 +1,18 @@
 .highlighted {
-    background-color: red;
+    background-color: #e30d12;
+    border-color: #e30d12;
+    color: white;
+}
+
+.app-grid__item {
+    width: 100%;
+    border: 2px solid grey;
+    padding: 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+    list-style-type: none;
+}
+
+.app-grid__item:hover {
+    border-color: #e30d12;
 }
