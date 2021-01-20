@@ -29,7 +29,7 @@ describe('multiplication grid', () => {
             {num: 10, active: false}
         ];
 
-        mockArr.forEach((item) => item.num % 5 === 0 ? (item.active = true) : (item.active = false));
+        mockArr.forEach(item => (item.num % 5 === 0) ? item.active = true : item.active = false);
 
         expect(mockArr[4].active).toBe(true);
         expect(mockArr[9].active).toBe(true);
@@ -38,10 +38,10 @@ describe('multiplication grid', () => {
     it('toggles all numbers active property to false', () => {
         const mockArr = [
             {num: 1, active: false},
-            {num: 2, active: false},
+            {num: 2, active: false}
         ];
 
-        mockArr.forEach((item) => (item.active = false));
+        mockArr.forEach(item => item.active = false);
 
         expect(mockArr[0].active).toBe(false);
         expect(mockArr[1].active).toBe(false);
