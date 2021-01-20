@@ -36,7 +36,7 @@ export default class GridContainer extends React.Component {
         const copy = [...this.state.numbers];
         const currentNum = +e.target.textContent;
 
-        copy.forEach((item) => item.num % currentNum === 0 ? (item.active = true) : (item.active = false));
+        copy.forEach(item => (item.num % currentNum === 0) ? item.active = true : item.active = false);
 
         this.setState({ numbers: copy, currentNum: currentNum });
     };
@@ -47,9 +47,9 @@ export default class GridContainer extends React.Component {
     handleReset = () => {
         const copy = [...this.state.numbers];
     
-        copy.forEach((item) => (item.active = false));
+        copy.forEach(item => item.active = false);
     
-        this.setState({ numbers: copy });
+        this.setState({ numbers: copy, currentNum: '' });
     };
 
     componentDidMount() {
@@ -63,7 +63,7 @@ export default class GridContainer extends React.Component {
 
                 <p className="app__description">This app displays 144 boxes on the screen. Click a box to view all the multiples of that number.</p>
 
-                <p className="app__selected-num">You have selected {this.state.currentNum}</p>
+                <p className="app__selected-num">You have selected: {this.state.currentNum}</p>
 
                 <button className="app__reset" onClick={ this.handleReset }>Reset</button>
 
